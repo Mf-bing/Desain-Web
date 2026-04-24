@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Form Tabel Mahasiswa</title>
+</head>
+<body>
+
+<form>
+    <table>
+        <tr>
+            <th colspan="2">Form Biodata Mahasiswa</th>
+        </tr>
+        <tr>
+            <td>Nama</td>
+            <td><input type="text" name="nama" required></td>
+        </tr>
+        <tr>
+            <td>NIM</td>
+            <td><input type="text" name="nim" required></td>
+        </tr>
+        <tr>
+            <td>Kategori</td>
+            <td>
+                <select name="kategori" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="Mahasiswa">Mahasiswa</option>
+                    <option value="Dosen">Dosen</option>
+                    <option value="Umum">Umum</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Simpan</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
