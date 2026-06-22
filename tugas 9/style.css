@@ -1,0 +1,93 @@
+/* ==========================================
+   1. RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /* Mencegah scrollbar horizontal di HP */
+}
+
+/* ==========================================
+   2. ANIMASI (KEYFRAMES)
+   ========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   3. TATA LETAK UTAMA (RESPONSIVE FLEXBOX)
+   ========================================== */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.2rem;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Pembungkus utama menggunakan Flexbox dengan flex-wrap */
+.main-content {
+    display: flex;
+    flex-wrap: wrap; /* Membuat konten turun ke bawah jika layar sempit */
+    gap: 25px; /* Jarak antar kartu */
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+/* KOTAK MEDIA (CARD) */
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    
+    /* Pengaturan Responsif Fleksibel */
+    flex: 1; 
+    min-width: 280px; /* Ukuran minimal kotak di layar HP */
+    max-width: 360px; /* Ukuran maksimal kotak di layar Laptop */
+    
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Delay animasi muncul */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+
+h2 {
+    color: #4a5568;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   4. PENGATURAN OBJECT MEDIA (100% RESPONSIVE)
+   ========================================== */
+img, video, audio {
+    width: 100%;       /* Memaksa media mengikuti lebar kotak pembungkusnya */
+    height: auto;      /* Menjaga proporsi tinggi agar tidak gepeng */
+    border-
