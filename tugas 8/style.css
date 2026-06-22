@@ -1,0 +1,129 @@
+/* ==========================================
+   1. RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   2. EFEK ANIMASI AWAL (KEYFRAMES)
+   ========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseTitle {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================
+   3. STYLING ELEMEN & IMPLEMENTASI ANIMASI
+   ========================================== */
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-align: center;
+    /* Menerapkan animasi pada judul */
+    animation: fadeInUp 0.8s ease-out forwards, pulseTitle 3s ease-in-out infinite 1s;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* KOTAK MEDIA (CARD) */
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    
+    /* Efek transisi halus untuk semua perubahan property */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    
+    /* Menerapkan animasi muncul satu per satu (delay berbeda) */
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Memberikan jeda muncul antar kartu agar estetik */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+
+h2 {
+    color: #4a5568;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   4. EFEK TRANSISI & TRANSFORMASI (HOVER)
+   ========================================== */
+
+/* Ketika Kotak di-hover (disentuh kursor) */
+.card:hover {
+    /* Transformasi: naik ke atas dan membesar 3% */
+    transform: translateY(-10px) scale(1.03);
+    /* Bayangan menjadi lebih tegas memberikan efek melayang */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Efek khusus untuk Gambar di dalam kartu */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 100px;
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.card:hover img {
+    /* Gambar membesar sedikit di dalam kotaknya */
+    transform: scale(3.00);
+    filter: brightness(2.00);
+}
+
+/* Efek untuk Video dan Audio */
+.card video, .card audio {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Video sedikit membesar saat dimainkan/hover */
+.card:hover video {
+    transform: scale(1.02);
+}
