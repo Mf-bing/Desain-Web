@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Mitra - Dagang Lokal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gabung Jadi Mitra UMKM</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="katalog.html">Katalog Produk</a></li>
+            <li><a href="daftar-mitra.html">Daftar Jadi Mitra</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Formulir Pengajuan Mitra Baru</h2>
+            <p>Silakan isi data usaha Anda dengan benar untuk diverifikasi oleh admin portal.</p>
+
+            <form action="#" method="POST">
+                
+                <div>
+                    <label for="nama_pemilik">Nama Pemilik:</label><br>
+                    <input type="text" id="nama_pemilik" name="nama_pemilik" required placeholder="Masukkan nama lengkap Anda">
+                </div>
+                <br>
+
+                <div>
+                    <label for="nama_umkm">Nama UMKM / Toko:</label><br>
+                    <input type="text" id="nama_umkm" name="nama_umkm" required placeholder="Contoh: Kedai Kopi Makmur">
+                </div>
+                <br>
+
+                <div>
+                    <label for="email">Alamat Email:</label><br>
+                    <input type="email" id="email" name="email" required placeholder="namatoko@email.com">
+                </div>
+                <br>
+
+                <div>
+                    <label for="kategori">Kategori Usaha:</label><br>
+                    <select id="kategori" name="kategori">
+                        <option value="kuliner">Kuliner (Makanan/Minuman)</option>
+                        <option value="fashion">Fashion & Pakaian</option>
+                        <option value="kerajinan">Kerajinan Tangan / Kriya</option>
+                        <option value="pertanian">Agrobisnis / Pertanian</option>
+                    </select>
+                </div>
+                <br>
+
+                <div>
+                    <label for="alamat">Alamat Lengkap Toko/Rumah Produksi:</label><br>
+                    <textarea id="alamat" name="alamat" rows="4" cols="40" required placeholder="Tuliskan nama jalan, RT/RW, Kecamatan, dan Kabupaten..."></textarea>
+                </div>
+                <br>
+
+                <div>
+                    <button type="submit">Kirim Pendaftaran</button>
+                    <button type="reset">Reset Form</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dagang Lokal - STIKOM Banyuwangi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

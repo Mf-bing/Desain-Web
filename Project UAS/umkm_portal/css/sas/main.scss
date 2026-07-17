@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-sans;
+    color: $dark-color;
+    background-color: $light-color;
+}
+
+// Nesting untuk komponen Navigasi
+nav {
+    background-color: white;
+    padding: 12px 20px;
+    box-shadow: $card-shadow;
+    
+    ul {
+        @include flex-layout(20px);
+        list-style: none;
+        
+        li {
+            a {
+                text-decoration: none;
+                color: $primary-color;
+                font-weight: 600;
+                transition: $transition-smooth;
+                
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@mixin flex-layout($gap: 15px) {
+    display: flex;
+    gap: $gap;
+}
+
+@mixin responsive-tablet {
+    @media (max-width: 768px) { @content; }
+}
